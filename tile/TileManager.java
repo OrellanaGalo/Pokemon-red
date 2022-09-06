@@ -12,8 +12,8 @@ import java.util.Objects;
 
 public class TileManager {
     GamePanel gp;
-    Tile[] tile;
-    int mapTileNumber[][];
+    public Tile[] tile;
+    public int[][] mapTileNumber;
 
     public TileManager(GamePanel gp){
         this.gp = gp;
@@ -31,12 +31,15 @@ public class TileManager {
 
             tile[1] = new Tile();
             tile[1].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/tiles/agua.png")));
+            tile[1].collision = true;
 
             tile[2] = new Tile();
             tile[2].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/tiles/ladrillo.png")));
+            tile[2].collision = true;
 
             tile[3] = new Tile();
             tile[3].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/tiles/alambrado.png")));
+            tile[3].collision = true;
 
             tile[4] = new Tile();
             tile[4].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/tiles/pasto_2.png")));
@@ -64,7 +67,7 @@ public class TileManager {
                 String line  = br.readLine();
 
                 while(col < gp.maxWorldCol){
-                    String numbers[] = line.split(" ");
+                    String[] numbers = line.split(" ");
                     int number = Integer.parseInt(numbers[col]);
                     mapTileNumber[col][row] = number;
                     col++;
