@@ -23,7 +23,7 @@ public class Player extends Entity{
         screenX = gp.ScreenWidth/2 - (gp.tileSize/2);
         screenY = gp.ScreenHeight/2 - (gp.tileSize/2);
 
-        solidArea = new Rectangle(8, 16, 32, 32); // Declaramos el tamano del area de colision.
+        solidArea = new Rectangle(8, 16, 32, 32); // Declaramos el tamano del área de colision.
 
         setDefaultValues();
         getPlayerImage();
@@ -33,7 +33,7 @@ public class Player extends Entity{
         worldX = gp.tileSize * 8;
         worldY = gp.tileSize * 14;
         speed = 2;
-        direction = "down";
+        direction = "right";
     }
 
     public void getPlayerImage(){
@@ -73,10 +73,18 @@ public class Player extends Entity{
             // If collsion is false, player can move
             if(!collisionOn){
                 switch (direction) {
-                    case "up" -> worldY -= speed;
-                    case "down" -> worldY += speed;
-                    case "left" -> worldX -= speed;
-                    case "right" -> worldX += speed;
+                    case "up": 
+                        worldY -= speed;
+                        break;
+                    case "down":
+                        worldY += speed;
+                        break;
+                    case "left": 
+                        worldX -= speed;
+                        break;
+                    case "right": 
+                        worldX += speed;
+                        break;
                 }
             }
 
