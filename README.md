@@ -1,2 +1,2 @@
-# 2DGame_Java
-Intento de juego 2D en Java
+# Pokemon Red Remake en Java
+Recreacion del Pokemon Red de la Gameboy Color en lenguaje Java
